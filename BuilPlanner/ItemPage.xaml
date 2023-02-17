@@ -1,0 +1,75 @@
+﻿<Page x:Class="BuilPlanner.ItemPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BuilPlanner"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1280"
+      Title="ItemPage">
+
+    <Grid Background="Black">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0" Margin="8,8,0,0" Background="Indigo">
+            <TextBlock FontSize="26" Margin="4" TextAlignment="Center" Foreground="LightSteelBlue" Text="Character Equipment"></TextBlock>
+        </Grid>
+        <Label Grid.Column="0" Grid.Row="1" BorderBrush="Indigo" BorderThickness="6" Margin="8,-6,-3,8"></Label>
+
+        <Canvas Grid.Column="0" x:Name="Can_ItemPage">
+            <Label x:Name="lb_chest" MouseMove="Label_MouseMove" MouseLeave="Label_MouseLeave" MouseEnter="Label_MouseEnter" MouseRightButtonDown="Label_CustomizeItem_RightMouseDown" MouseLeftButtonDown="Label_SearchItem_LeftMouseDown" Canvas.Left="355" Canvas.Top="365" Width="100" Height="140" Background="SlateGray" BorderBrush="LightSteelBlue" BorderThickness="5" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" Text="Chest" TextAlignment="Center" FontSize="16" Width="80" Foreground="White" Background="Black" Opacity="0.5" ></TextBlock>
+                </DockPanel>
+            </Label>
+
+            <Label x:Name="lb_legs" MouseMove="Label_MouseMove" MouseLeave="Label_MouseLeave" MouseEnter="Label_MouseEnter" MouseRightButtonDown="Label_CustomizeItem_RightMouseDown" MouseLeftButtonDown="Label_SearchItem_LeftMouseDown" Canvas.Left="355" Canvas.Top="550" Width="100" Height="140" Background="SlateGray" BorderBrush="LightSteelBlue" BorderThickness="5" RenderTransformOrigin="0.6,-0.321" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" Text="Legs" TextAlignment="Center" FontSize="16" Width="80" Foreground="White" Background="Black" Opacity="0.5" ></TextBlock>
+                </DockPanel>
+            </Label>
+
+            <Label x:Name="lb_main_hand" MouseMove="Label_MouseMove" MouseLeave="Label_MouseLeave" MouseEnter="Label_MouseEnter" MouseRightButtonDown="Label_CustomizeItem_RightMouseDown" MouseLeftButtonDown="Label_SearchItem_LeftMouseDown" Canvas.Left="200" Canvas.Top="365" Width="100" Height="140" Background="SlateGray" BorderBrush="LightSteelBlue" BorderThickness="5" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" Text="Main-hand" TextAlignment="Center" FontSize="16" Width="80" Foreground="White" Background="Black" Opacity="0.5" ></TextBlock>
+                </DockPanel>
+            </Label>
+
+            <Label x:Name="lb_off_hand" MouseMove="Label_MouseMove" MouseLeave="Label_MouseLeave" MouseEnter="Label_MouseEnter" MouseRightButtonDown="Label_CustomizeItem_RightMouseDown" MouseLeftButtonDown="Label_SearchItem_LeftMouseDown" Canvas.Left="500" Canvas.Top="365" Width="100" Height="140" Background="SlateGray" BorderBrush="LightSteelBlue" BorderThickness="5" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" Text="Off-hand" TextAlignment="Center" FontSize="16" Width="80" Foreground="White" Background="Black" Opacity="0.5" ></TextBlock>
+                </DockPanel>
+            </Label>
+
+            <Label x:Name="lb_necklace" MouseMove="Label_MouseMove" MouseLeave="Label_MouseLeave" MouseEnter="Label_MouseEnter" MouseRightButtonDown="Label_CustomizeItem_RightMouseDown" MouseLeftButtonDown="Label_SearchItem_LeftMouseDown" Canvas.Left="520" Canvas.Top="250" Width="60" Height="60" Background="SlateGray" BorderBrush="LightSteelBlue" BorderThickness="5">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" Text="Neck" TextAlignment="Center" FontSize="14" Width="40" Foreground="White" Background="Black" Opacity="0.5" ></TextBlock>
+                </DockPanel>
+            </Label>
+
+            <Label x:Name="lb_WeaponSwap" MouseDown="Label_WeaponSwap_MouseDown" Canvas.Left="80" Canvas.Top="445" Width="60" Height="60" Background="SlateGray" BorderBrush="LightSteelBlue" BorderThickness="5">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" Text="Swap" TextAlignment="Center" FontSize="14" Width="40" Foreground="White" Background="Black" Opacity="0.5" ></TextBlock>
+                </DockPanel>
+            </Label>
+        </Canvas>
+
+        <Grid Grid.Row="0" Grid.Column="1" Margin="-1,8,8,0" Background="Indigo">
+            <TextBlock FontSize="26" Margin="4" TextAlignment="Center" Foreground="LightSteelBlue" Text="Item Browser"></TextBlock>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Label BorderBrush="Indigo" BorderThickness="6" Margin="-3,-6,8,8"></Label>
+            <Grid>
+
+                <Frame Grid.Row="2" x:Name="ItemBrowser"  Margin="38,38,50,50" NavigationUIVisibility="Hidden"></Frame>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

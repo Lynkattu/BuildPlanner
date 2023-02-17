@@ -1,0 +1,22 @@
+﻿<Page x:Class="BuilPlanner.OriginTree.Artist"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BuilPlanner.OriginTree"
+      mc:Ignorable="d" 
+      d:DesignHeight="780" d:DesignWidth="1280"
+      Title="Artist">
+
+    
+    
+    <Canvas x:Name="OriginCanvas" Background="Black">
+
+        <Label Canvas.Left="640" Canvas.Top="380" Background="DarkBlue" BorderBrush="Gray" BorderThickness="2" MouseEnter="Label_MouseEnter" MouseLeave="Label_MouseLeave" MouseMove="Label_MouseMove" MouseLeftButtonUp="Label_MouseLeftButtonUp">
+            <Grid Margin="-4" VerticalAlignment="Center" HorizontalAlignment="Center" Width="50" Height="50">
+                <TextBlock x:Name="TbTalent_Creative" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="2,0,0,0"  Foreground="White">0/5</TextBlock>
+            </Grid>
+        </Label>
+        
+    </Canvas>
+</Page>

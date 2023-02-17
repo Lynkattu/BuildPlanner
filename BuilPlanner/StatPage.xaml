@@ -1,0 +1,22 @@
+﻿<Page x:Class="BuilPlanner.StatPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BuilPlanner"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="StatPage">
+
+    <StackPanel>
+        <Label Width="300" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
+            <Label.Background>
+                <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
+            </Label.Background>
+            <StackPanel  Orientation="Horizontal">
+                <TextBlock Width="200" Margin="5" FontSize="20" Foreground="LightGray" Text="Cooldown rate"></TextBlock>
+                <TextBlock x:Name="TbCooldownRate" Margin="5" FontSize="20" Foreground="LightGray" Text="0%"></TextBlock>
+            </StackPanel>
+        </Label>
+    </StackPanel>
+</Page>

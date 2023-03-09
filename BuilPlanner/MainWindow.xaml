@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="960" Width="1280" ResizeMode="CanResize">
     <Grid Background="Black">
-        <StackPanel Background="Indigo" Margin="8" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-            <Button FontSize="20" Background="LightSteelBlue" Foreground="Indigo" Margin="5" Width="110" Click="BtAttributes_Click" >Attributes</Button>
-            <Button FontSize="20" Background="LightSteelBlue" Foreground="Indigo" Margin="5" Width="110" Click="BtSkills_Click" >Skills</Button>
-            <Button FontSize="20" Background="LightSteelBlue" Foreground="Indigo" Margin="5" Width="110" Click="BtOrigin_Click">Origin</Button>
-            <Button FontSize="20" Background="LightSteelBlue" Foreground="Indigo" Margin="5" Width="110" Click="BtItems_Click">Items</Button>
-            <Button FontSize="20" Background="LightSteelBlue" Foreground="Indigo" Margin="5" Width="110" Click="BtStat_Click" >Stats</Button>
+        <StackPanel Background="{DynamicResource LabelBackgroundColor}" Margin="8" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
+            <Button FontSize="20" Background="{DynamicResource ButtonBackgroundColor}" Foreground="{DynamicResource ButtonTextColor}" Margin="5" Width="110" Click="BtAttributes_Click" >Attributes</Button>
+            <Button FontSize="20" Background="{DynamicResource ButtonBackgroundColor}" Foreground="{DynamicResource ButtonTextColor}" Margin="5" Width="110" Click="BtSkills_Click" >Skills</Button>
+            <Button FontSize="20" Background="{DynamicResource ButtonBackgroundColor}" Foreground="{DynamicResource ButtonTextColor}" Margin="5" Width="110" Click="BtOrigin_Click">Origin</Button>
+            <Button FontSize="20" Background="{DynamicResource ButtonBackgroundColor}" Foreground="{DynamicResource ButtonTextColor}" Margin="5" Width="110" Click="BtItems_Click">Items</Button>
+            <Button FontSize="20" Background="{DynamicResource ButtonBackgroundColor}" Foreground="{DynamicResource ButtonTextColor}" Margin="5" Width="110" Click="BtStat_Click" >Stats</Button>
             
         </StackPanel>
         <Frame x:Name="Main" Margin="0,60,0,0" NavigationUIVisibility="Hidden"></Frame>

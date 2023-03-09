@@ -32,66 +32,10 @@ namespace BuilPlanner
 
             tb_Origin.Text += att.GetOrigin().ToString();
             tb_Background.Text += att.GetBackground().ToString();
-            tb_Profession1.Text += att.GetProfession(true).ToString();
-            tb_Profession2.Text += att.GetProfession(false).ToString();
 
-            switch (att.GetBackground())
-            {
-                case Attributes.Background.Assassin:
-                    background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/BuilPlanner;component/Images/Assassin.jpg"));
-                    break;
-                case Attributes.Background.Pirate:
-                    background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/BuilPlanner;component/Images/Pirate.jpg"));
-                    break;
-                case Attributes.Background.Trickster:
-                    background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/BuilPlanner;component/Images/Trickster.jpg"));
-                    break;
-                case Attributes.Background.Necromancer:
-                    background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/BuilPlanner;component/Images/Necromancer.jpg"));
-                    break;
-                case Attributes.Background.Sorcerer:
-                    background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/BuilPlanner;component/Images/Sorcerer.jpg"));
-                    break;
-                case Attributes.Background.Warlock:
-                    background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/BuilPlanner;component/Images/Warlock.jpg"));
-                    break;
-                case Attributes.Background.Mobed:
-                    background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/BuilPlanner;component/Images/Mobed.jpg"));
-                    break;
-                case Attributes.Background.Monk:
-                    background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/BuilPlanner;component/Images/Monk.jpg"));
-                    break;
-                case Attributes.Background.Priest:
-                    background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/BuilPlanner;component/Images/Priest.jpg"));
-                    break;
-                case Attributes.Background.Druid:
-                    background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/BuilPlanner;component/Images/Druid.jpg"));
-                    break;
-                case Attributes.Background.Hofgothi:
-                    background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/BuilPlanner;component/Images/Hofgothi.jpg"));
-                    break;
-                case Attributes.Background.Shaman:
-                    background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/BuilPlanner;component/Images/Shaman.jpg"));
-                    break;
-                case Attributes.Background.Alchemist:
-                    background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/BuilPlanner;component/Images/Alchemist.jpg"));
-                    break;
-                case Attributes.Background.Artificer:
-                    background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/BuilPlanner;component/Images/Artificer.jpg"));
-                    break;
-                case Attributes.Background.Mage:
-                    background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/BuilPlanner;component/Images/Mage.jpg"));
-                    break;
-                case Attributes.Background.Bard:
-                    background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/BuilPlanner;component/Images/Bard.jpg"));
-                    break;
-                case Attributes.Background.Jester:
-                    background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/BuilPlanner;component/Images/Painter.png"));
-                    break;
-                case Attributes.Background.Dancer:
-                    background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/BuilPlanner;component/Images/Dancer.jpg"));
-                    break;
-            }
+            //set background image based on origin background
+            background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/" + att.GetBackgroundImage()));
+
             Can_skills.Background = background;
         }
 

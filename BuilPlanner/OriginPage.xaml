@@ -8,11 +8,7 @@
       d:DesignHeight="900" d:DesignWidth="1280"
       Title="OriginPage">
     <Page.Resources>
-        <Style x:Key="ComboBoxItemStyle1" TargetType="{x:Type ComboBoxItem}">
-            <Setter Property="Background" Value="LightSteelBlue"/>
-            <Setter Property="Foreground" Value="Indigo"/>
-            <Setter Property="BorderBrush" Value="Indigo"/>
-        </Style>        
+   
     </Page.Resources>
 
 
@@ -28,8 +24,6 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="150"></ColumnDefinition>
                     <ColumnDefinition Width="150"></ColumnDefinition>
-                    <ColumnDefinition Width="150"></ColumnDefinition>
-                    <ColumnDefinition Width="150"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="35"></RowDefinition>
@@ -39,25 +33,16 @@
 
                 <Label Grid.Row="0" Grid.Column="0" Margin="2" Content="Origin" Background="LightSteelBlue"  HorizontalContentAlignment="Center" Foreground="Indigo" FontSize="15" FontFamily="Segoe Script" FontWeight="Bold"></Label>
                 <Label Grid.Row="0" Grid.Column="1" Margin="2" Content="Background" Background="LightSteelBlue"  HorizontalContentAlignment="Center" Foreground="Indigo" FontSize="15" FontFamily="Segoe Script" FontWeight="Bold"></Label>
-                <Label Grid.Row="0" Grid.Column="2" Margin="2" Content="Profession" Background="LightSteelBlue"  HorizontalContentAlignment="Center" Foreground="Indigo" FontSize="15" FontFamily="Segoe Script" FontWeight="Bold"></Label>
-                <Label Grid.Row="0" Grid.Column="3" Margin="2" Content="Profession" Background="LightSteelBlue"  HorizontalContentAlignment="Center" Foreground="Indigo" FontSize="15" FontFamily="Segoe Script" FontWeight="Bold"></Label>
 
                 <ComboBox x:Name="CbOrigin" SelectionChanged="CbOrigin_SelectionChanged" Margin="2" Grid.Row="1" Grid.Column="0" Width="150" FontFamily="Viner Hand ITC" ItemContainerStyle="{DynamicResource ComboBoxItemStyle1}"></ComboBox>
 
                 <ComboBox x:Name="CbBackground" SelectionChanged="CbBackground_SelectionChanged" Margin="2" Grid.Row="1" Grid.Column="1" Width="150" FontFamily="Viner Hand ITC"   ItemContainerStyle="{DynamicResource ComboBoxItemStyle1}" >
 
                 </ComboBox>
-
-                <ComboBox x:Name="CbProfession1" Margin="2" Grid.Row="1" Grid.Column="2" Width="150" FontFamily="Viner Hand ITC"  SelectedIndex="0" ItemContainerStyle="{DynamicResource ComboBoxItemStyle1}" ></ComboBox>
-
-                <ComboBox x:Name="CbProfession2" Margin="2" Grid.Row="1" Grid.Column="3" Width="150" FontFamily="Viner Hand ITC"  SelectedIndex="0" ItemContainerStyle="{DynamicResource ComboBoxItemStyle1}" >
-
-                </ComboBox>
+           
 
                 <Button Click="BtShowOrigin_Click" Margin="2" Grid.Row="2" Grid.Column="0" Width="60" Height="25" Background="LightSteelBlue" Foreground="Indigo" FontSize="12" >Show</Button>
                 <Button  Margin="2" Grid.Row="2" Grid.Column="1" Width="60" Height="25" Background="LightSteelBlue" Foreground="Indigo" FontSize="12" >Show</Button>
-                <Button  Margin="2" Grid.Row="2" Grid.Column="2" Width="60" Height="25" Background="LightSteelBlue" Foreground="Indigo" FontSize="12" >Show</Button>
-                <Button  Margin="2" Grid.Row="2" Grid.Column="3" Width="60" Height="25" Background="LightSteelBlue" Foreground="Indigo" FontSize="12" >Show</Button>
 
             </Grid>
         </Label>

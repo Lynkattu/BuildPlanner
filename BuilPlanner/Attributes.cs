@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace BuilPlanner
 {
     public class Attributes
     {
+        private readonly Lib lib = new Lib();
         public enum ItemSlot { Chest, Hands, Legs, Head, Shoulder, Feet, OffHand, MainHand, Ring, Necklace, Charm }
 
         public static Dictionary<ItemSlot, Weapon> EquipWeapon = new Dictionary<ItemSlot, Weapon>();
@@ -31,9 +33,7 @@ namespace BuilPlanner
         };
 
         public enum Attribute { Strength, Dexterity, Intelligence, Willpower, Constitution, Endurance, Agility, Wisdom, Charisma }
-        public enum Origin { Artist, Believer, Criminal, Occultist, Primitive, Scholar }
         public enum AttributeStat { Equipload, Mending, Thoughness, Poise, Resilence, Concentration, Perspicacious, Penetration, Alacrity, Precision, Life, Mana, Stamina, Haste, Quickness, Efficiency, Block, Dodge }
-        public enum Profession { Warrior, Hunter, Magician, Knight, Gladiator, Bandit, Archeologist, Thief, Elementalist, Warden, Cleric }
 
         private Dictionary<AttributeStat, double> attributeStats = new Dictionary<AttributeStat, double>
         {
@@ -58,14 +58,33 @@ namespace BuilPlanner
 
         };
 
-        public enum Background { Bard, Dancer, Jester, Mobed, Monk, Priest, Assassin, Pirate, Trickster, Necromancer, Warlock, Sorcerer, Druid, Hofgothi, Shaman, Artificer, Alchemist, Mage }
+        private Dictionary<Lib.Background, string> backgroundImages = new Dictionary<Lib.Background, string>
+        {
+            {Lib.Background.Alchemist, "BuilPlanner;component/Images/Alchemist.png"},
+            {Lib.Background.Bard, "BuilPlanner;component/Images/Bard.png"},
+            {Lib.Background.Dancer, "BuilPlanner;component/Images/Dancer.png"},
+            {Lib.Background.Jester, "BuilPlanner;component/Images/Jester.png"},
+            {Lib.Background.Artificer, "BuilPlanner;component/Images/Artificer.png"},
+            {Lib.Background.Wizard, "BuilPlanner;component/Images/Wizard.png"},
+            {Lib.Background.Thief, "BuilPlanner;component/Images/Thief.png"},
+            {Lib.Background.Pirate, "BuilPlanner;component/Images/Pirate.png"},
+            {Lib.Background.Assassin, "BuilPlanner;component/Images/Assassin.png"},
+            {Lib.Background.Mobed, "BuilPlanner;component/Images/Mobed.png"},
+            {Lib.Background.Monk, "BuilPlanner;component/Images/Monk.png"},
+            {Lib.Background.Priest, "BuilPlanner;component/Images/Priest.png"},
+            {Lib.Background.Necromancer, "BuilPlanner;component/Images/Necromancer.png"},
+            {Lib.Background.Sorcerer, "BuilPlanner;component/Images/Sorcerer.png"},
+            {Lib.Background.Warlock, "BuilPlanner;component/Images/Warlock.png"},
+            {Lib.Background.Druid, "BuilPlanner;component/Images/Druid.png"},
+            {Lib.Background.Hofgothi, "BuilPlanner;component/Images/Hofgothi.png"},
+            {Lib.Background.Shaman, "BuilPlanner;component/Images/Shaman.png"},
+        };
+
 
         private readonly ItemList itemList = new ItemList();
-        private static Origin origin = Origin.Artist;
-        private static Background background = Background.Bard;
+        private static Lib.Origin origin = Lib.Origin.Artist;
+        private static Lib.Background background = Lib.Background.Bard;
         private static bool init = true;
-        private static Profession profession1 = Profession.Warrior;
-        private static Profession profession2 = Profession.Hunter;
 
         private static int level = 1;
         private static int remainAttributes = 0;
@@ -117,12 +136,12 @@ namespace BuilPlanner
                         
         }
 
-        public Dictionary<Attribute, int> GetBaseAttributes(Background background)
+        public Dictionary<Attribute, int> GetBaseAttributes(Lib.Background background)
         {
             Dictionary<Attribute, int> baseAttributeDict = new Dictionary<Attribute, int>();
             switch (background)
             {
-                case Background.Bard:
+                case Lib.Background.Bard:
                     baseAttributeDict = new Dictionary<Attribute, int>()
                     {
                         { Attribute.Strength, 11 },
@@ -138,6 +157,11 @@ namespace BuilPlanner
             break;
     }
             return baseAttributeDict;
+        }
+
+        public string GetBackgroundImage()
+        {
+            return backgroundImages[GetBackground()];
         }
 
         public void UpdateAttributes(Dictionary<Attribute, int> att)
@@ -187,7 +211,7 @@ namespace BuilPlanner
            remainAttributes = newRemain;
         }
 
-        public void SetOrigin(Origin originName )
+        public void SetOrigin(Lib.Origin originName )
         {
             //Remove slotted origin and background skills from character
             List<Skill> originSkills = skillList.GetSkillList(origin);
@@ -211,24 +235,19 @@ namespace BuilPlanner
             origin = originName;
         }
 
-        public Origin GetOrigin()
+        public Lib.Origin GetOrigin()
         {
             return origin;
         }
 
-        public void SetBackground(Background bground)
+        public void SetBackground(Lib.Background bground)
         {
             background = bground;
         }
 
-        public Background GetBackground()
+        public Lib.Background GetBackground()
         {
             return background;
-        }
-
-        public Profession GetProfession(bool isProfession1)
-        {
-            return isProfession1 ? profession1 : profession2;
         }
 
         private void UpdateAttributeStats()

@@ -17,8 +17,6 @@
         <StackPanel Margin="8,4,8,0" Grid.Row="0" Background="Indigo" Orientation="Horizontal">
             <TextBlock x:Name="tb_Origin" Margin="8,4,8,4" Text="Origin: " FontSize="20" Foreground="LightSteelBlue" ></TextBlock>
             <TextBlock x:Name="tb_Background" Margin="8,4,8,4" Text="Background: " FontSize="20" Foreground="LightSteelBlue" ></TextBlock>
-            <TextBlock x:Name="tb_Profession1" Margin="8,4,8,4" Text="profession: " FontSize="20" Foreground="LightSteelBlue" ></TextBlock>
-            <TextBlock x:Name="tb_Profession2" Margin="8,4,8,4" Text="profession: " FontSize="20" Foreground="LightSteelBlue" ></TextBlock>
         </StackPanel>
 
         <Grid Grid.Row="1">

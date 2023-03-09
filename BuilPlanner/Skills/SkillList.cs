@@ -138,66 +138,66 @@ namespace BuilPlanner.Skills
             new ShadowStrike()
         };
 
-        public List<Skill> GetSkillList(Attributes.Background backgroundSkills)
+        public List<Skill> GetSkillList(Lib.Background backgroundSkills)
         {
             switch (backgroundSkills)
             {
-                case Attributes.Background.Dancer:
+                case Lib.Background.Dancer:
                     return dancerSkills;
-                case Attributes.Background.Bard:
+                case Lib.Background.Bard:
                     return bardSkills;
-                case Attributes.Background.Jester:
+                case Lib.Background.Jester:
                     return painterSkills;
-                case Attributes.Background.Mobed:
+                case Lib.Background.Mobed:
                     return mobedSkills;
-                case Attributes.Background.Monk:
+                case Lib.Background.Monk:
                     return monkSkills;
-                case Attributes.Background.Priest:
+                case Lib.Background.Priest:
                     return priestSkills;
-                case Attributes.Background.Assassin:
+                case Lib.Background.Assassin:
                     return assassinSkills;
-                case Attributes.Background.Pirate:
+                case Lib.Background.Pirate:
                     return pirateSkills;
-                case Attributes.Background.Trickster:
+                case Lib.Background.Thief:
                     return tricksterSkills;
-                case Attributes.Background.Necromancer:
+                case Lib.Background.Necromancer:
                     return necromancerSkills;
-                case Attributes.Background.Warlock:
+                case Lib.Background.Warlock:
                     return warlockSkills;
-                case Attributes.Background.Sorcerer:
+                case Lib.Background.Sorcerer:
                     return sorcererSkills;                    
-                case Attributes.Background.Druid:
+                case Lib.Background.Druid:
                     return druidSkills;
-                case Attributes.Background.Hofgothi:
+                case Lib.Background.Hofgothi:
                     return hofgothiSkills;
-                case Attributes.Background.Shaman:
+                case Lib.Background.Shaman:
                     return shamanSkills;
-                case Attributes.Background.Artificer:
+                case Lib.Background.Artificer:
                     return alchemistSkills;
-                case Attributes.Background.Alchemist:
+                case Lib.Background.Alchemist:
                     return artificerSkills;
-                case Attributes.Background.Mage:
+                case Lib.Background.Wizard:
                     return mageSkills;
                 default:
                     return allSkills;
             }
         }
 
-        public List<Skill> GetSkillList(Attributes.Origin originSkills)
+        public List<Skill> GetSkillList(Lib.Origin originSkills)
         {
             switch (originSkills)
             {
-                case Attributes.Origin.Artist:
+                case Lib.Origin.Artist:
                     return artistSkills;
-                case Attributes.Origin.Believer:
+                case Lib.Origin.Believer:
                     return believerSkills;
-                case Attributes.Origin.Criminal:
+                case Lib.Origin.Criminal:
                     return criminalSkills;
-                case Attributes.Origin.Occultist:
+                case Lib.Origin.Occultist:
                     return occultistSkills;
-                case Attributes.Origin.Primitive:
+                case Lib.Origin.Primitive:
                     return primitiveSkills;
-                case Attributes.Origin.Scholar:
+                case Lib.Origin.Scholar:
                     return scholarSkills;
                 default:
                     return null;

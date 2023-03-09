@@ -8,142 +8,117 @@
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="AttributePage">
 
-    <Grid Background="Black" KeyDown="ShiftDown" KeyUp="ShiftUp">
-        
+    <Grid Background="Black" KeyDown="ShiftDown" KeyUp="ShiftUp" SizeChanged="Resize">
+        <Canvas x:Name="Can_attributes" Margin="8"></Canvas>
+
         <StackPanel Margin="8" Orientation="Vertical" HorizontalAlignment="Left">
+
+            <Label Width="300" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
+                <StackPanel  Orientation="Horizontal">
+                    <ComboBox x:Name="CbOrigin" SelectionChanged="CbOrigin_SelectionChanged" Margin="2" Grid.Row="1" Grid.Column="0" Width="140" FontFamily="Viner Hand ITC" ItemContainerStyle="{DynamicResource ComboBoxItemStyle1}" BorderThickness="2"></ComboBox>
+                    <ComboBox x:Name="CbBackground" SelectionChanged="CbBackground_SelectionChanged" Margin="2" Grid.Row="1" Grid.Column="1" Width="140" FontFamily="Viner Hand ITC" ItemContainerStyle="{DynamicResource ComboBoxItemStyle1}" BorderThickness="2"/>
+                </StackPanel>
+            </Label>
             
-            <Label Width="300" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                <Label.Background>
-                    <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                </Label.Background>
+            <Label Width="300" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                 <StackPanel  Orientation="Horizontal">
                     <TextBlock Width="110" Margin="5" FontSize="20" Foreground="LightGray" Text="Level"></TextBlock>
-                    <Button Click="BtDecreaseLevel_Click" Background="LightSteelBlue" Margin="5" Width="30" Height="30" Foreground="Indigo" FontSize="20" FontWeight="Bold">-</Button>
-                    <Button Click="BtIncreaseLevel_Click" Background="LightSteelBlue" Margin="5" Width="30" Height="30" Foreground="Indigo" FontSize="20" FontWeight="Bold">+</Button>
+                    <Button Click="BtDecreaseLevel_Click" Style="{DynamicResource ButtonStyle1}" Margin="5" Content="-"></Button>
+                    <Button Click="BtIncreaseLevel_Click" Style="{DynamicResource ButtonStyle1}" Margin="5" Content="+"></Button>
                     <TextBlock x:Name="TbLevelValue" Margin="5" FontSize="20" Foreground="LightGray" Text="1"></TextBlock>
                 </StackPanel>
             </Label>
 
-            <Label Width="300" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                <Label.Background>
-                    <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                </Label.Background>                
+            <Label Width="300" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                 <StackPanel  Orientation="Horizontal">
                     <TextBlock Width="110" Margin="5" FontSize="20" Foreground="Orange" Text="Strength" ToolTip="Increase damage for strength weapons, and reduce equipment weight cost."></TextBlock>
-                    <Button Click="BtDecreaseStrength_Click" Background="LightSteelBlue" Margin="5" Width="30" Height="30" Foreground="Indigo" FontSize="20" FontWeight="Bold">-</Button>
-                    <Button Click="BtIncreaseStrength_Click" Background="LightSteelBlue" Margin="5" Width="30" Height="30" Foreground="Indigo" FontSize="20" FontWeight="Bold">+</Button>
+                    <Button Click="BtDecreaseStrength_Click" Style="{DynamicResource ButtonStyle1}" Margin="5">-</Button>
+                    <Button Click="BtIncreaseStrength_Click" Style="{DynamicResource ButtonStyle1}" Margin="5">+</Button>
                     <TextBlock x:Name="TbStrengthValue" Margin="5" FontSize="20" Foreground="Orange" Text="5"></TextBlock>
                 </StackPanel>
             </Label>
 
-            <Label Width="300" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                <Label.Background>
-                    <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                </Label.Background>
+            <Label Width="300" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                 <StackPanel  Orientation="Horizontal">
                     <TextBlock Width="110" Margin="5" FontSize="20" Foreground="LightGreen" Text="Dexterity" ToolTip="Increase damage for dexterity weapons, and increase critical chance."></TextBlock>
-                    <Button Click="BtDecreaseDexterity_Click" Background="LightSteelBlue" Margin="5" Width="30" Height="30" Foreground="Indigo" FontSize="20" FontWeight="Bold">-</Button>
-                    <Button Click="BtIncreaseDexterity_Click" Background="LightSteelBlue" Margin="5" Width="30" Height="30" Foreground="Indigo" FontSize="20" FontWeight="Bold">+</Button>
+                    <Button Click="BtDecreaseDexterity_Click" Style="{DynamicResource ButtonStyle1}" Margin="5">-</Button>
+                    <Button Click="BtIncreaseDexterity_Click" Style="{DynamicResource ButtonStyle1}" Margin="5">+</Button>
                     <TextBlock x:Name="TbDexterityValue" Margin="5" FontSize="20" Foreground="LightGreen" Text="5"></TextBlock>
                 </StackPanel>                     
             </Label>
 
-            <Label Width="300" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                <Label.Background>
-                    <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                </Label.Background>
+            <Label Width="300" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                 <StackPanel  Orientation="Horizontal">
                     <TextBlock Width="110" Margin="5" FontSize="20" Foreground="DeepSkyBlue" Text="Intelligence" ToolTip="Increase damage for intelligence weapons, increase penetration."></TextBlock>
-                    <Button Click="BtDecreaseIntelligence_Click" Background="LightSteelBlue" Margin="5" Width="30" Height="30" Foreground="Indigo" FontSize="20" FontWeight="Bold">-</Button>
-                    <Button Click="BtIncreaseIntelligence_Click" Background="LightSteelBlue" Margin="5" Width="30" Height="30" Foreground="Indigo" FontSize="20" FontWeight="Bold">+</Button>
+                    <Button Click="BtDecreaseIntelligence_Click" Style="{DynamicResource ButtonStyle1}" Margin="5">-</Button>
+                    <Button Click="BtIncreaseIntelligence_Click" Style="{DynamicResource ButtonStyle1}" Margin="5">+</Button>
 
                     <TextBlock x:Name="TbIntelligenceValue" Margin="5" FontSize="20" Foreground="DeepSkyBlue" Text="5"></TextBlock>
                 </StackPanel>
             </Label>
 
 
-            <Label Width="300" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                <Label.Background>
-                    <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                </Label.Background>
+            <Label Width="300" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                 <StackPanel  Orientation="Horizontal">
                     <TextBlock Width="110" Margin="5" FontSize="20" Foreground="Violet" Text="Willpower" ToolTip="Increase concentration and maximum mana."></TextBlock>
-                    <Button Click="BtDecreaseWillpower_Click" Background="LightSteelBlue" Margin="5" Width="30" Height="30" Foreground="Indigo" FontSize="20" FontWeight="Bold">-</Button>
-                    <Button Click="BtIncreaseWillpower_Click" Background="LightSteelBlue" Margin="5" Width="30" Height="30" Foreground="Indigo" FontSize="20" FontWeight="Bold">+</Button>
+                    <Button Click="BtDecreaseWillpower_Click" Style="{DynamicResource ButtonStyle1}" Margin="5">-</Button>
+                    <Button Click="BtIncreaseWillpower_Click" Style="{DynamicResource ButtonStyle1}" Margin="5">+</Button>
                     <TextBlock x:Name="TbWillpowerValue" Margin="5" FontSize="20" Foreground="Violet" Text="5"></TextBlock>
                 </StackPanel>
             </Label>
 
-            <Label Width="300" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                <Label.Background>
-                    <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                </Label.Background>
+            <Label Width="300" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                 <StackPanel  Orientation="Horizontal">
                     <TextBlock Width="110" Margin="5" FontSize="20" Foreground="red" Text="Constitution" ToolTip="Increase maximum health and equipload."></TextBlock>
-                    <Button Click="BtDecreaseConstitutution_Click" Background="LightSteelBlue" Margin="5" Width="30" Height="30" Foreground="Indigo" FontSize="20" FontWeight="Bold">-</Button>
-                    <Button Click="BtIncreaseConstitution_Click" Background="LightSteelBlue" Margin="5" Width="30" Height="30" Foreground="Indigo" FontSize="20" FontWeight="Bold">+</Button>
+                    <Button Click="BtDecreaseConstitutution_Click" Style="{DynamicResource ButtonStyle1}" Margin="5">-</Button>
+                    <Button Click="BtIncreaseConstitution_Click" Style="{DynamicResource ButtonStyle1}" Margin="5">+</Button>
                     <TextBlock x:Name="TbConstitutionValue" Margin="5" FontSize="20" Foreground="red" Text="5"></TextBlock>
                 </StackPanel>
             </Label>
 
-            <Label Width="300" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                <Label.Background>
-                    <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                </Label.Background>
+            <Label Width="300" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                 <StackPanel  Orientation="Horizontal">
                     <TextBlock Width="110" Margin="5" FontSize="20" Foreground="Yellow" Text="Endurance" ToolTip="Increase impact resistance and maximum stamina."></TextBlock>
-                    <Button Click="BtDecreaseEndurance_Click" Background="LightSteelBlue" Margin="5" Width="30" Height="30" Foreground="Indigo" FontSize="20" FontWeight="Bold">-</Button>
-                    <Button Click="BtIncreaseEndurance_Click" Background="LightSteelBlue" Margin="5" Width="30" Height="30" Foreground="Indigo" FontSize="20" FontWeight="Bold">+</Button>
+                    <Button Click="BtDecreaseEndurance_Click" Style="{DynamicResource ButtonStyle1}" Margin="5">-</Button>
+                    <Button Click="BtIncreaseEndurance_Click" Style="{DynamicResource ButtonStyle1}" Margin="5">+</Button>
                     <TextBlock x:Name="TbEnduranceValue" Margin="5" FontSize="20" Foreground="Yellow" Text="5"></TextBlock>
                 </StackPanel>
             </Label>
 
-            <Label Width="300" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                <Label.Background>
-                    <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                </Label.Background>
+            <Label Width="300" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                 <StackPanel  Orientation="Horizontal">
                     <TextBlock Width="110" Margin="5" FontSize="20" Foreground="Cyan" Text="Agility" ToolTip="Increase movement speed and attack/cast speed."></TextBlock>
-                    <Button Click="BtDecreaseAgility_Click" Background="LightSteelBlue" Margin="5" Width="30" Height="30" Foreground="Indigo" FontSize="20" FontWeight="Bold">-</Button>
-                    <Button Click="BtIncreaseAgility_Click" Background="LightSteelBlue" Margin="5" Width="30" Height="30" Foreground="Indigo" FontSize="20" FontWeight="Bold">+</Button>
+                    <Button Click="BtDecreaseAgility_Click" Style="{DynamicResource ButtonStyle1}" Margin="5">-</Button>
+                    <Button Click="BtIncreaseAgility_Click" Style="{DynamicResource ButtonStyle1}" Margin="5">+</Button>
                     <TextBlock x:Name="TbAgilityValue" Margin="5" FontSize="20" Foreground="Cyan" Text="5"></TextBlock>
                 </StackPanel>
             </Label>
 
-            <Label Width="300" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                <Label.Background>
-                    <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                </Label.Background>
+            <Label Width="300" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                 <StackPanel  Orientation="Horizontal">
                     <TextBlock Width="110" Margin="5" FontSize="20" Foreground="GhostWhite" Text="Wisdom" ToolTip="Reduce ability cost and increase cooldown recharge rate."></TextBlock>
-                    <Button Click="BtDecreaseWisdom_Click" Background="LightSteelBlue" Margin="5" Width="30" Height="30" Foreground="Indigo" FontSize="20" FontWeight="Bold">-</Button>
-                    <Button Click="BtIncreaseWisdom_Click" Background="LightSteelBlue" Margin="5" Width="30" Height="30" Foreground="Indigo" FontSize="20" FontWeight="Bold">+</Button>
-                    <TextBlock x:Name="TbWisdomValue" Margin="5" FontSize="20" Foreground="GhostWhite" Text="5"></TextBlock>
+                    <Button Click="BtDecreaseWisdom_Click" Style="{DynamicResource ButtonStyle1}" Margin="5">-</Button>
+                    <Button Click="BtIncreaseWisdom_Click" Style="{DynamicResource ButtonStyle1}" Margin="5">+</Button>
+                        <TextBlock x:Name="TbWisdomValue" Margin="5" FontSize="20" Foreground="GhostWhite" Text="5"></TextBlock>
                 </StackPanel>
             </Label>
 
-            <Label Width="300" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                <Label.Background>
-                    <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                </Label.Background>
+            <Label Width="300" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                 <StackPanel  Orientation="Horizontal">
                     <TextBlock Width="110" Margin="5" FontSize="20" Foreground="BurlyWood" Text="Charisma" ToolTip="Increase hex resistance and perspicacious."></TextBlock>
-                    <Button Click="BtDecreaseCharisma_Click" Background="LightSteelBlue" Margin="5" Width="30" Height="30" Foreground="Indigo" FontSize="20" FontWeight="Bold">-</Button>
-                    <Button Click="BtIncreaseCharisma_Click" Background="LightSteelBlue" Margin="5" Width="30" Height="30" Foreground="Indigo" FontSize="20" FontWeight="Bold">+</Button>
+                    <Button Click="BtDecreaseCharisma_Click" Style="{DynamicResource ButtonStyle1}" Margin="5">-</Button>
+                    <Button Click="BtIncreaseCharisma_Click" Style="{DynamicResource ButtonStyle1}" Margin="5">+</Button>
                     <TextBlock x:Name="TbCharismaValue" Margin="5" FontSize="20" Foreground="BurlyWood" Text="5"></TextBlock>
                 </StackPanel>
             </Label>
 
-            <Label Width="300" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                <Label.Background>
-                    <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                </Label.Background>
+            <Label Width="300" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                 <StackPanel  Orientation="Horizontal">
                     <TextBlock  Margin="5" FontSize="20" Foreground="LightGray" Text="Remaining attributes"></TextBlock>
                     <TextBlock x:Name="TbRemainAttrib" Margin="5" FontSize="20" Foreground="LightGray" Text="0"></TextBlock>
                 </StackPanel>
             </Label>
-            <Button Click="BtResetAttributes_Click" Content="Reset" FontSize="20" Height="50" Background="LightSteelBlue" Foreground="Indigo" BorderBrush="Indigo" BorderThickness="3"></Button>
+            <Button Click="BtResetAttributes_Click" Content="Reset" FontSize="20" Height="50" Background="{DynamicResource ButtonBackgroundColor}" Foreground="{DynamicResource ButtonTextColor}" BorderThickness="1"></Button>
         </StackPanel>
 
         
@@ -154,91 +129,65 @@
             </Grid.ColumnDefinitions>
             
             <StackPanel Orientation="Vertical" VerticalAlignment="Top" Grid.Column="1">
-                
-                <Label Width="270"  HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                    <Label.Background>
-                        <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                    </Label.Background>
+
+                <Label Width="270"  HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
+
                     <StackPanel  Orientation="Horizontal">
                         <TextBlock Width="180" Margin="5" FontSize="20" Foreground="Orange" Text="Thoughness" ToolTip="Reduce direct damage taken"></TextBlock>                        
                         <TextBlock x:Name="TbThoughness" Margin="5" FontSize="20" Foreground="Orange" Text="0%"></TextBlock>
                     </StackPanel>
                 </Label>
 
-                <Label Width="270" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                    <Label.Background>
-                        <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                    </Label.Background>
+                <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                     <StackPanel  Orientation="Horizontal">
                         <TextBlock Width="180" Margin="5" FontSize="20" Foreground="LightGreen" Text="Precision" ToolTip="Increase chance to deal critical damage"></TextBlock>
                         <TextBlock x:Name="TbPrecision" Margin="5" FontSize="20" Foreground="LightGreen" Text="0%"></TextBlock>
                     </StackPanel>
                 </Label>
 
-                <Label Width="270" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                    <Label.Background>
-                        <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                    </Label.Background>
+                <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                     <StackPanel  Orientation="Horizontal">
                         <TextBlock Width="180" Margin="5" FontSize="20" Foreground="DeepSkyBlue" Text="Mana" ToolTip="Increase maximum mana"></TextBlock>
                         <TextBlock x:Name="TbMana" Margin="5" FontSize="20" Foreground="DeepSkyBlue" Text="0%"></TextBlock>
                     </StackPanel>
                 </Label>
 
-                <Label Width="270" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                    <Label.Background>
-                        <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                    </Label.Background>
+                <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                     <StackPanel  Orientation="Horizontal">
                         <TextBlock Width="180" Margin="5" FontSize="20" Foreground="Violet" Text="Concentration" ToolTip="Increase effectiveness of positive buff effects"></TextBlock>
                         <TextBlock x:Name="TbConcentration" Margin="5" FontSize="20" Foreground="Violet" Text="0%"></TextBlock>
                     </StackPanel>
                 </Label>
 
-                <Label Width="270" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                    <Label.Background>
-                        <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                    </Label.Background>
+                <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                     <StackPanel  Orientation="Horizontal">
                         <TextBlock Width="180" Margin="5" FontSize="20" Foreground="red" Text="Block" ToolTip="Increase your block amount"></TextBlock>
                         <TextBlock x:Name="TbBlock" Margin="5" FontSize="20" Foreground="red" Text="0"></TextBlock>
                     </StackPanel>
                 </Label>
 
-                <Label Width="270" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                    <Label.Background>
-                        <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                    </Label.Background>
+                <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                     <StackPanel  Orientation="Horizontal">
                         <TextBlock Width="180" Margin="5" FontSize="20" Foreground="Yellow" Text="Poise" ToolTip="Reduce stability lost on damage taken"></TextBlock>
                         <TextBlock x:Name="TbPoise" Margin="5" FontSize="20" Foreground="Yellow" Text="0%"></TextBlock>
                     </StackPanel>
                 </Label>
 
-                <Label Width="270" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                    <Label.Background>
-                        <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                    </Label.Background>
+                <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                     <StackPanel  Orientation="Horizontal">
                         <TextBlock Width="180" Margin="5" FontSize="20" Foreground="Cyan" Text="Quickness" ToolTip="Increase attack and casting speed"></TextBlock>
                         <TextBlock x:Name="TbQuickness" Margin="5" FontSize="20" Foreground="Cyan" Text="0%"></TextBlock>
                     </StackPanel>
                 </Label>
 
-                <Label Width="270" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                    <Label.Background>
-                        <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                    </Label.Background>
+                <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                     <StackPanel  Orientation="Horizontal">
                         <TextBlock Width="180" Margin="5" FontSize="20" Foreground="GhostWhite" Text="Alacrity" ToolTip="Increase abilities recharge rate"></TextBlock>
                         <TextBlock x:Name="TbAlacrity" Margin="5" FontSize="20" Foreground="GhostWhite" Text="0%"></TextBlock>
                     </StackPanel>
                 </Label>
 
-                <Label Width="270" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                    <Label.Background>
-                        <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                    </Label.Background>
+                <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                     <StackPanel  Orientation="Horizontal">
                         <TextBlock Width="180" Margin="5" FontSize="20" Foreground="BurlyWood" Text="Perspicacious" ToolTip="Increase effectiveness of your negative effects"></TextBlock>
                         <TextBlock x:Name="TbPerspicacious" Margin="5" FontSize="20" Foreground="BurlyWood" Text="0%"></TextBlock>
@@ -248,90 +197,64 @@
             </StackPanel>
 
             <StackPanel Orientation="Vertical" VerticalAlignment="Top"  Grid.Column="0">
-                <Label Width="270" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                    <Label.Background>
-                        <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                    </Label.Background>
+                <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                     <StackPanel  Orientation="Horizontal">
                         <TextBlock Width="180" Margin="5" FontSize="20" Foreground="Orange" Text="Equipload" ToolTip="Increase maximum equipload"></TextBlock>
                         <TextBlock x:Name="TbEquipload" Margin="5" FontSize="20" Foreground="Orange" Text="0"></TextBlock>
                     </StackPanel>
                 </Label>
 
-                <Label Width="270" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                    <Label.Background>
-                        <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                    </Label.Background>
+                <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                     <StackPanel  Orientation="Horizontal">
-                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="LightGreen" Text="Dodge" ToolTip="Increase damage of dexterity based weapons"></TextBlock>
+                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="LightGreen" Text="Dodge" ToolTip="Reduce cost of dodge action"></TextBlock>
                         <TextBlock x:Name="TbDodge"  Margin="5" FontSize="20" Foreground="LightGreen" Text="0%"></TextBlock>
                     </StackPanel>
                 </Label>
 
-                <Label Width="270" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                    <Label.Background>
-                        <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                    </Label.Background>
+                <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                     <StackPanel  Orientation="Horizontal">
                         <TextBlock Width="180" Margin="5" FontSize="20" Foreground="DeepSkyBlue" Text="Mending" ToolTip="Increase your healing and absorb effects"></TextBlock>
                         <TextBlock x:Name="TbMending" Margin="5" FontSize="20" Foreground="DeepSkyBlue" Text="0%"></TextBlock>
                     </StackPanel>
                 </Label>
 
-                <Label Width="270" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                    <Label.Background>
-                        <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                    </Label.Background>
+                <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
+
                     <StackPanel  Orientation="Horizontal">
                         <TextBlock Width="180" Margin="5" FontSize="20" Foreground="violet" Text="Efficiency" ToolTip="Reduce mana, stamina and health cost of abilities"></TextBlock>
                         <TextBlock x:Name="TbEfficiency" Margin="5" FontSize="20" Foreground="violet" Text="0%"></TextBlock>
                     </StackPanel>
                 </Label>
 
-                <Label Width="270" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                    <Label.Background>
-                        <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                    </Label.Background>
+                <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                     <StackPanel  Orientation="Horizontal">
                         <TextBlock Width="180" Margin="5" FontSize="20" Foreground="red" Text="Life" ToolTip="Increase maximum life"></TextBlock>
                         <TextBlock x:Name="TbLife" Margin="5" FontSize="20" Foreground="red" Text="0%"></TextBlock>
                     </StackPanel>
                 </Label>
 
-                <Label Width="270" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                    <Label.Background>
-                        <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                    </Label.Background>
+                <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                     <StackPanel  Orientation="Horizontal">
                         <TextBlock Width="180" Margin="5" FontSize="20" Foreground="Yellow" Text="Stamina" ToolTip="Increase maximum stamina"></TextBlock>
                         <TextBlock x:Name="TbStamina" Margin="5" FontSize="20" Foreground="Yellow" Text="0%"></TextBlock>
                     </StackPanel>
                 </Label>
 
-                <Label Width="270" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                    <Label.Background>
-                        <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                    </Label.Background>
+                <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                     <StackPanel  Orientation="Horizontal">
                         <TextBlock Width="180" Margin="5" FontSize="20" Foreground="Cyan" Text="Haste" ToolTip="Increase movement speed"></TextBlock>
                         <TextBlock x:Name="TbHaste" Margin="5" FontSize="20" Foreground="Cyan" Text="0%"></TextBlock>
                     </StackPanel>
                 </Label>
 
-                <Label Width="270" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                    <Label.Background>
-                        <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                    </Label.Background>
+                <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                     <StackPanel  Orientation="Horizontal">
                         <TextBlock Width="180" Margin="5" FontSize="20" Foreground="GhostWhite" Text="Penetration" ToolTip="Damage penetrate enemy physical and spell armor"></TextBlock>
                         <TextBlock x:Name="TbPenetration" Margin="5" FontSize="20" Foreground="GhostWhite" Text="0%"></TextBlock>
                     </StackPanel>
                 </Label>
 
-                <Label Width="270" HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Indigo">
-                    <Label.Background>
-                        <SolidColorBrush Color="LightSteelBlue" Opacity="0.2"/>
-                    </Label.Background>
+                <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                     <StackPanel  Orientation="Horizontal">
                         <TextBlock Width="180" Margin="5" FontSize="20" Foreground="BurlyWood" Text="Resilence" ToolTip="Reduce negative effects effectiveness on you"></TextBlock>
                         <TextBlock x:Name="TbResilence" Margin="5" FontSize="20" Foreground="BurlyWood" Text="0%"></TextBlock>

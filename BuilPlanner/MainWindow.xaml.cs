@@ -20,7 +20,7 @@ namespace BuilPlanner
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Attributes att = new Attributes();
+        private readonly Attributes att = new Attributes();
         public MainWindow()
         {
             InitializeComponent();

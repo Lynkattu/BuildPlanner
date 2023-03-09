@@ -19,18 +19,26 @@ namespace BuilPlanner
     /// Interaction logic for AttributePage.xaml
     /// </summary>
     public partial class AttributePage : Page
-    {
+    {   private readonly Lib lib = new Lib();
         private readonly Attributes attrib = new Attributes();
+        private ImageBrush background = new ImageBrush();
         private Dictionary<Attributes.Attribute, int> attributes;
-
-        private int attribPerLevel = 8;
+        private double screenHeight = SystemParameters.VirtualScreenHeight;
+        private int attribPerLevel = 6;
         private bool shiftDown = false;
         private bool ctrlDown = false;
         public AttributePage(Dictionary<Attributes.Attribute, int> att)           
         {
             InitializeComponent();
+            Can_attributes.Width = screenHeight;
+            background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/" + attrib.GetBackgroundImage()));
+            Can_attributes.Background = background;
             attributes = new Dictionary<Attributes.Attribute, int>(att);
             attrib.UpdateAttributes(attributes);
+            SetOriginItemList();
+            CbOrigin.SelectedItem = attrib.GetOrigin();
+            SetBackgroundItemList(attrib.GetOrigin());
+            CbBackground.SelectedItem = attrib.GetBackground();
             UpdateAttributes();
         }
         private void UpdateAttributes()
@@ -384,5 +392,50 @@ namespace BuilPlanner
             attrib.ResetAtrributes();
             UpdateAttributes();
         }
+        private void Resize(object sender, SizeChangedEventArgs e)
+        {
+
+            screenHeight = e.NewSize.Height;
+            Can_attributes.Width = screenHeight;
+        }
+
+        //------------------------OriginBt-BackgroundBt-----------------------------------------
+        private void SetBackgroundItemList(Lib.Origin origin)
+        {
+
+            CbBackground.ItemsSource = lib.GetBackgroundItem(origin);
+        }
+
+        private void SetOriginItemList()
+        {
+            CbOrigin.ItemsSource = lib.GetOriginItemList();
+        }
+
+
+        private void CbOrigin_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox cb = e.Source as ComboBox;
+            Lib.Origin origin = (Lib.Origin)cb.SelectedValue;
+
+
+            if (origin != attrib.GetOrigin())
+            {
+                attrib.SetOrigin(origin);
+                SetBackgroundItemList(origin);
+                CbBackground.SelectedIndex = 0;
+            }
+        }
+
+        private void CbBackground_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox cb = e.Source as ComboBox;
+            if (cb.SelectedValue != null)
+            {
+                Lib.Background bg = (Lib.Background)cb.SelectedValue;
+                attrib.SetBackground(bg);
+                background.ImageSource = new BitmapImage(new Uri("pack://application:,,,/" + attrib.GetBackgroundImage()));
+            }
+        }
+
     }
 }

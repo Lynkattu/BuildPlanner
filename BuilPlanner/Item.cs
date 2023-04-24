@@ -35,6 +35,7 @@ namespace BuilPlanner
         protected int affixCount = 6;
         protected int runeCount = 0;
         protected string name;
+        protected string bonus;
         protected ItemType it;
         public RuneSet runeSet = new RuneSet();
         protected double weight;
@@ -42,6 +43,8 @@ namespace BuilPlanner
         public Artifact artifact;
         public Blessed blessed;
         public Cursed cursed;
+
+        public string GetBonus() { return bonus; }
 
         public Brush GetItemColor()
         {
@@ -231,13 +234,14 @@ namespace BuilPlanner
         public Armor() { }
 
         //Normal
-        public Armor(string itemName, ArmorSlot slot, int armorValue, double weightValue)
+        public Armor(string itemName, ArmorSlot slot, int armorValue, double weightValue, string styleBonus)
         {
             name = itemName;
             it = ItemType.Normal;
             armorSlot = slot;
             armor = armorValue;           
             weight = weightValue;
+            bonus = styleBonus;
             SetStability();
 
         }
@@ -557,7 +561,7 @@ namespace BuilPlanner
                     description = "Direct physical damage grant one stack of wrath of sorel. After reaching 20 stack next holy magic unleash wrath of sorel for 6 seconds. Convert all physical damage to holy damage and increase holy damage dealt by 25%";
                     break;
                 case ArtifactPower.TidalMaster:
-                    description = "Water based healing skills summon tidal wave that deals damage equal to healing, water based damage skills heals 2% of you max health, can't occur more than once per second.";
+                    description = "Water based healing skills summon tidal wave that deals damage equal to 60% of healing, water based damage skills heals 3% of you max health";
                         break;
             }
         }
@@ -613,7 +617,7 @@ namespace BuilPlanner
             switch (curseType)
             {
                 case Curse.Bloodfiend:
-                    description = "Increase life steal and life regeneration by 60%, but reduce healing revive by 75%";
+                    description = "Increase life steal and life regeneration by 40%, but reduce healing revive by 80%";
                     break;
                 case Curse.Pirate:
                     description = "Weapon skills inflict random curse to your enemies, curse lasts for 6 seconds, but cursed enemies bypass 50% of your armor";
@@ -644,7 +648,7 @@ namespace BuilPlanner
         
         public Rune(RuneWord rune)
         {
-            runeStatMult = 0.75;
+            runeStatMult = 0.4;
             runeWord = rune;
             switch (rune)
             {

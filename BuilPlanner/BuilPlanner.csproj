@@ -201,9 +201,6 @@
     <Resource Include="Images\Wizard.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Dancer.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Jester.png" />
   </ItemGroup>
   <ItemGroup>
@@ -241,6 +238,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Warlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Dancer.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -133,8 +133,8 @@
                 <Label Width="270"  HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
 
                     <StackPanel  Orientation="Horizontal">
-                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="Orange" Text="Thoughness" ToolTip="Reduce direct damage taken"></TextBlock>                        
-                        <TextBlock x:Name="TbThoughness" Margin="5" FontSize="20" Foreground="Orange" Text="0%"></TextBlock>
+                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="Orange" Text="Toughness" ToolTip="Reduce direct damage taken"></TextBlock>                        
+                        <TextBlock x:Name="TbToughness" Margin="5" FontSize="20" Foreground="Orange" Text="0%"></TextBlock>
                     </StackPanel>
                 </Label>
 
@@ -147,8 +147,15 @@
 
                 <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                     <StackPanel  Orientation="Horizontal">
-                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="DeepSkyBlue" Text="Mana" ToolTip="Increase maximum mana"></TextBlock>
-                        <TextBlock x:Name="TbMana" Margin="5" FontSize="20" Foreground="DeepSkyBlue" Text="0%"></TextBlock>
+                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="LightGreen" Text="Weapon Power" ToolTip="Reduce negative effects effectiveness on you"></TextBlock>
+                        <TextBlock x:Name="TbWeaponDEX" Margin="5" FontSize="20" Foreground="LightGreen" Text="0%"></TextBlock>
+                    </StackPanel>
+                </Label>
+
+                <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
+                    <StackPanel  Orientation="Horizontal">
+                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="DeepSkyBlue" Text="Mind" ToolTip="Increase maximum mana"></TextBlock>
+                        <TextBlock x:Name="TbMind" Margin="5" FontSize="20" Foreground="DeepSkyBlue" Text="0%"></TextBlock>
                     </StackPanel>
                 </Label>
 
@@ -161,6 +168,13 @@
 
                 <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                     <StackPanel  Orientation="Horizontal">
+                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="Violet" Text="Psyche" ToolTip="Reduce negative effects effectiveness on you"></TextBlock>
+                        <TextBlock x:Name="TbPsyche" Margin="5" FontSize="20" Foreground="Violet" Text="0%"></TextBlock>
+                    </StackPanel>
+                </Label>
+
+                <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
+                    <StackPanel  Orientation="Horizontal">
                         <TextBlock Width="180" Margin="5" FontSize="20" Foreground="red" Text="Block" ToolTip="Increase your block amount"></TextBlock>
                         <TextBlock x:Name="TbBlock" Margin="5" FontSize="20" Foreground="red" Text="0"></TextBlock>
                     </StackPanel>
@@ -168,8 +182,15 @@
 
                 <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                     <StackPanel  Orientation="Horizontal">
-                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="Yellow" Text="Poise" ToolTip="Reduce stability lost on damage taken"></TextBlock>
-                        <TextBlock x:Name="TbPoise" Margin="5" FontSize="20" Foreground="Yellow" Text="0%"></TextBlock>
+                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="Yellow" Text="Vigor" ToolTip="Reduce stability lost on damage taken"></TextBlock>
+                        <TextBlock x:Name="TbVigor" Margin="5" FontSize="20" Foreground="Yellow" Text="0%"></TextBlock>
+                    </StackPanel>
+                </Label>
+
+                <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
+                    <StackPanel  Orientation="Horizontal">
+                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="Yellow" Text="Sturdiness" ToolTip="Increase maximum stamina"></TextBlock>
+                        <TextBlock x:Name="TbSturdiness" Margin="5" FontSize="20" Foreground="Yellow" Text="0%"></TextBlock>
                     </StackPanel>
                 </Label>
 
@@ -189,8 +210,22 @@
 
                 <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                     <StackPanel  Orientation="Horizontal">
+                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="White" Text="Resistance" ToolTip="Increase maximum stamina"></TextBlock>
+                        <TextBlock x:Name="TbResistance" Margin="5" FontSize="20" Foreground="White" Text="0%"></TextBlock>
+                    </StackPanel>
+                </Label>
+
+                <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
+                    <StackPanel  Orientation="Horizontal">
                         <TextBlock Width="180" Margin="5" FontSize="20" Foreground="BurlyWood" Text="Perspicacious" ToolTip="Increase effectiveness of your negative effects"></TextBlock>
                         <TextBlock x:Name="TbPerspicacious" Margin="5" FontSize="20" Foreground="BurlyWood" Text="0%"></TextBlock>
+                    </StackPanel>
+                </Label>
+
+                <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
+                    <StackPanel  Orientation="Horizontal">
+                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="BurlyWood" Text="Ferocity" ToolTip="Reduce negative effects effectiveness on you"></TextBlock>
+                        <TextBlock x:Name="TbFerocity" Margin="5" FontSize="20" Foreground="BurlyWood" Text="0%"></TextBlock>
                     </StackPanel>
                 </Label>
 
@@ -199,22 +234,36 @@
             <StackPanel Orientation="Vertical" VerticalAlignment="Top"  Grid.Column="0">
                 <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                     <StackPanel  Orientation="Horizontal">
-                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="Orange" Text="Equipload" ToolTip="Increase maximum equipload"></TextBlock>
-                        <TextBlock x:Name="TbEquipload" Margin="5" FontSize="20" Foreground="Orange" Text="0"></TextBlock>
+                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="Orange" Text="Lifting" ToolTip="Increase maximum equipload"></TextBlock>
+                        <TextBlock x:Name="TbLifting" Margin="5" FontSize="20" Foreground="Orange" Text="0"></TextBlock>
                     </StackPanel>
                 </Label>
 
                 <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                     <StackPanel  Orientation="Horizontal">
-                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="LightGreen" Text="Dodge" ToolTip="Reduce cost of dodge action"></TextBlock>
-                        <TextBlock x:Name="TbDodge"  Margin="5" FontSize="20" Foreground="LightGreen" Text="0%"></TextBlock>
+                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="Orange" Text="Weapon Power" ToolTip="Reduce negative effects effectiveness on you"></TextBlock>
+                        <TextBlock x:Name="TbWeaponSTR" Margin="5" FontSize="20" Foreground="Orange" Text="0%"></TextBlock>
                     </StackPanel>
                 </Label>
 
                 <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                     <StackPanel  Orientation="Horizontal">
-                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="DeepSkyBlue" Text="Mending" ToolTip="Increase your healing and absorb effects"></TextBlock>
-                        <TextBlock x:Name="TbMending" Margin="5" FontSize="20" Foreground="DeepSkyBlue" Text="0%"></TextBlock>
+                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="LightGreen" Text="Tenacity" ToolTip="Reduce cost of dodge action"></TextBlock>
+                        <TextBlock x:Name="TbTenacity"  Margin="5" FontSize="20" Foreground="LightGreen" Text="0%"></TextBlock>
+                    </StackPanel>
+                </Label>
+
+                <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
+                    <StackPanel  Orientation="Horizontal">
+                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="DeepSkyBlue" Text="Wits" ToolTip="Increase your healing and absorb effects"></TextBlock>
+                        <TextBlock x:Name="TbWits" Margin="5" FontSize="20" Foreground="DeepSkyBlue" Text="0%"></TextBlock>
+                    </StackPanel>
+                </Label>
+
+                <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
+                    <StackPanel  Orientation="Horizontal">
+                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="DeepSkyBlue" Text="Weapon Power" ToolTip="Reduce negative effects effectiveness on you"></TextBlock>
+                        <TextBlock x:Name="TbWeaponINT" Margin="5" FontSize="20" Foreground="DeepSkyBlue" Text="0%"></TextBlock>
                     </StackPanel>
                 </Label>
 
@@ -235,6 +284,13 @@
 
                 <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                     <StackPanel  Orientation="Horizontal">
+                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="Red" Text="Convalescent" ToolTip="Reduce negative effects effectiveness on you"></TextBlock>
+                        <TextBlock x:Name="TbConvalescent" Margin="5" FontSize="20" Foreground="Red" Text="0%"></TextBlock>
+                    </StackPanel>
+                </Label>
+
+                <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
+                    <StackPanel  Orientation="Horizontal">
                         <TextBlock Width="180" Margin="5" FontSize="20" Foreground="Yellow" Text="Stamina" ToolTip="Increase maximum stamina"></TextBlock>
                         <TextBlock x:Name="TbStamina" Margin="5" FontSize="20" Foreground="Yellow" Text="0%"></TextBlock>
                     </StackPanel>
@@ -242,24 +298,41 @@
 
                 <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                     <StackPanel  Orientation="Horizontal">
-                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="Cyan" Text="Haste" ToolTip="Increase movement speed"></TextBlock>
-                        <TextBlock x:Name="TbHaste" Margin="5" FontSize="20" Foreground="Cyan" Text="0%"></TextBlock>
+                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="Cyan" Text="Perseverance" ToolTip="Increase movement speed"></TextBlock>
+                        <TextBlock x:Name="TbPerseverance" Margin="5" FontSize="20" Foreground="Cyan" Text="0%"></TextBlock>
                     </StackPanel>
                 </Label>
 
                 <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                     <StackPanel  Orientation="Horizontal">
-                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="GhostWhite" Text="Penetration" ToolTip="Damage penetrate enemy physical and spell armor"></TextBlock>
-                        <TextBlock x:Name="TbPenetration" Margin="5" FontSize="20" Foreground="GhostWhite" Text="0%"></TextBlock>
+                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="Cyan" Text="Fitness" ToolTip="Increase maximum stamina"></TextBlock>
+                        <TextBlock x:Name="TbFitness" Margin="5" FontSize="20" Foreground="Cyan" Text="0%"></TextBlock>
                     </StackPanel>
                 </Label>
 
                 <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
                     <StackPanel  Orientation="Horizontal">
-                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="BurlyWood" Text="Resilence" ToolTip="Reduce negative effects effectiveness on you"></TextBlock>
-                        <TextBlock x:Name="TbResilence" Margin="5" FontSize="20" Foreground="BurlyWood" Text="0%"></TextBlock>
+                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="GhostWhite" Text="Spirit" ToolTip="Damage penetrate enemy physical and spell armor"></TextBlock>
+                        <TextBlock x:Name="TbSpirit" Margin="5" FontSize="20" Foreground="GhostWhite" Text="0%"></TextBlock>
                     </StackPanel>
                 </Label>
+
+
+
+                <Label Width="270" HorizontalAlignment="Left" BorderThickness="1" Background="{DynamicResource LabelBackgroundColor}">
+                    <StackPanel  Orientation="Horizontal">
+                        <TextBlock Width="180" Margin="5" FontSize="20" Foreground="BurlyWood" Text="Resilience" ToolTip="Reduce negative effects effectiveness on you"></TextBlock>
+                        <TextBlock x:Name="TbResilience" Margin="5" FontSize="20" Foreground="BurlyWood" Text="0%"></TextBlock>
+                    </StackPanel>
+                </Label>
+
+
+
+
+
+
+
+
 
             </StackPanel>
             

@@ -486,6 +486,24 @@ namespace BuilPlanner
             return rune_list;
         }
 
+        public TextBlock GetBonusTextBlock(Item item) 
+        {
+            Brush textColor = Brushes.White;
+            TextBlock tb_bonus = new TextBlock
+            {
+                Text = item.GetBonus(),
+                TextWrapping = TextWrapping.Wrap,
+                FontSize = 12,
+                Foreground = textColor,
+                Margin = new Thickness(10, 10, 10, 10),
+
+                HorizontalAlignment = HorizontalAlignment.Center
+            };
+            
+            return tb_bonus;
+        }
+
+
         //create base item stats to tooltip
         public void CreateTbBasedOnItemType(Item item, bool isEquip = false)
         {
@@ -502,7 +520,6 @@ namespace BuilPlanner
                 affix_list = GetAffixTextBlockList();
                 rune_list = GetRuneTextBlockList();
             }
-
             //Create affix texblocks
             if (affix_list.Count() > 0 && isEquip)
             {
@@ -555,11 +572,9 @@ namespace BuilPlanner
                 for (int i = 0; i < item.GetRuneCount(); i++)
                 {
                     tooltip.Children.Add(rune_list[i]);
-                }                
+                }
             }
 
-            
-           
             //create additional textblocks if item type is one of the following item types
             switch (item.GetItemType())
             {
@@ -630,11 +645,12 @@ namespace BuilPlanner
                         FontSize = 12,
                         Foreground = item.GetItemColor(),
                         HorizontalAlignment = HorizontalAlignment.Center,
-                        Margin = new Thickness(10, 10, 10, 10)
+                        Margin = new Thickness(10, 10, 10, 0)
                     };
                     tooltip.Children.Add(tb_CurseDesc);
                     break;
             }
+            if (item.GetItemType() == Item.ItemType.Normal) tooltip.Children.Add(GetBonusTextBlock(item));
 
         }
 

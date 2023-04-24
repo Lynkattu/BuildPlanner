@@ -9,19 +9,18 @@ namespace BuilPlanner
 {
     public class Attributes
     {
-        private readonly Lib lib = new Lib();
         public enum ItemSlot { Chest, Hands, Legs, Head, Shoulder, Feet, OffHand, MainHand, Ring, Necklace, Charm }
 
         public static Dictionary<ItemSlot, Weapon> EquipWeapon = new Dictionary<ItemSlot, Weapon>();
 
         private static bool isMainWeaponSet = true;
-        private static Dictionary<ItemSlot, Weapon> MainWeaponSet = new Dictionary<ItemSlot, Weapon>();
-        private static Dictionary<ItemSlot, Weapon> SecondaryWeaponSet = new Dictionary<ItemSlot, Weapon>();
+        private static readonly Dictionary<ItemSlot, Weapon> MainWeaponSet = new Dictionary<ItemSlot, Weapon>();
+        private static readonly Dictionary<ItemSlot, Weapon> SecondaryWeaponSet = new Dictionary<ItemSlot, Weapon>();
 
         public static Dictionary<ItemSlot, Armor> EquipArmor = new Dictionary<ItemSlot, Armor>();
         public static Dictionary<ItemSlot, Jewelry> EquipJewelry = new Dictionary<ItemSlot, Jewelry>();
 
-        private Skills.SkillList skillList = new Skills.SkillList();
+        private readonly Skills.SkillList skillList = new Skills.SkillList();
         private static List<Skill> skills = new List<Skill>()
         {
             null,
@@ -31,34 +30,7 @@ namespace BuilPlanner
             null,
             null
         };
-
-        public enum Attribute { Strength, Dexterity, Intelligence, Willpower, Constitution, Endurance, Agility, Wisdom, Charisma }
-        public enum AttributeStat { Equipload, Mending, Thoughness, Poise, Resilence, Concentration, Perspicacious, Penetration, Alacrity, Precision, Life, Mana, Stamina, Haste, Quickness, Efficiency, Block, Dodge }
-
-        private Dictionary<AttributeStat, double> attributeStats = new Dictionary<AttributeStat, double>
-        {
-            { AttributeStat.Equipload, 0 },
-            { AttributeStat.Thoughness, 0 },
-            { AttributeStat.Dodge, 0 },
-            { AttributeStat.Precision, 0 },
-            { AttributeStat.Mending, 0 },
-            { AttributeStat.Mana, 0 },
-            { AttributeStat.Efficiency, 0 },
-            { AttributeStat.Concentration, 0 },
-            { AttributeStat.Life, 0 },
-            { AttributeStat.Block, 0 },
-            { AttributeStat.Stamina, 0 },
-            { AttributeStat.Poise, 0 },
-            { AttributeStat.Haste, 0 },
-            { AttributeStat.Quickness, 0 },
-            { AttributeStat.Penetration, 0 },
-            { AttributeStat.Alacrity, 0 },
-            { AttributeStat.Resilence, 0 },
-            { AttributeStat.Perspicacious, 0 },
-
-        };
-
-        private Dictionary<Lib.Background, string> backgroundImages = new Dictionary<Lib.Background, string>
+        private readonly Dictionary<Lib.Background, string> backgroundImages = new Dictionary<Lib.Background, string>
         {
             {Lib.Background.Alchemist, "BuilPlanner;component/Images/Alchemist.png"},
             {Lib.Background.Bard, "BuilPlanner;component/Images/Bard.png"},
@@ -79,7 +51,39 @@ namespace BuilPlanner
             {Lib.Background.Hofgothi, "BuilPlanner;component/Images/Hofgothi.png"},
             {Lib.Background.Shaman, "BuilPlanner;component/Images/Shaman.png"},
         };
+        public enum Attribute { Strength, Dexterity, Intelligence, Willpower, Constitution, Endurance, Agility, Wisdom, Charisma }
+        public enum AttributeStat { Tenacity, Psyche, Vigor, Sturdiness, Fitness, Perseverance, Spirit, Resistance, Ferocity, StrWeaponPower, DexWeaponPower, IntWeaponPower, Lifting, Convalescent, Thoughness, Resilience, Concentration, Perspicacious, Wits, Alacrity, Precision, Life, Mind, Stamina, Quickness, Efficiency, Block }
 
+        private Dictionary<AttributeStat, double> attributeStats = new Dictionary<AttributeStat, double>
+        {
+            { AttributeStat.StrWeaponPower, 0 },
+            { AttributeStat.DexWeaponPower, 0 },
+            { AttributeStat.IntWeaponPower, 0 },
+            { AttributeStat.Fitness, 0 },
+            { AttributeStat.Wits, 0 },
+            { AttributeStat.Spirit, 0 },
+            { AttributeStat.Lifting, 0 },
+            { AttributeStat.Vigor, 0 },
+            { AttributeStat.Psyche, 0 },
+            { AttributeStat.Sturdiness, 0 },
+            { AttributeStat.Thoughness, 0 },
+            { AttributeStat.Tenacity, 0 },
+            { AttributeStat.Precision, 0 },
+            { AttributeStat.Convalescent, 0 },
+            { AttributeStat.Mind, 0 },
+            { AttributeStat.Efficiency, 0 },
+            { AttributeStat.Concentration, 0 },
+            { AttributeStat.Life, 0 },
+            { AttributeStat.Block, 0 },
+            { AttributeStat.Stamina, 0 },
+            { AttributeStat.Perseverance, 0 },
+            { AttributeStat.Quickness, 0 },
+            { AttributeStat.Alacrity, 0 },
+            { AttributeStat.Resilience, 0 },
+            { AttributeStat.Perspicacious, 0 },
+            { AttributeStat.Resistance, 0 },
+            { AttributeStat.Ferocity, 0 }
+        };
 
         private readonly ItemList itemList = new ItemList();
         private static Lib.Origin origin = Lib.Origin.Artist;
@@ -129,11 +133,9 @@ namespace BuilPlanner
                 EquipJewelry.Add(ItemSlot.Ring, null);
                 EquipJewelry.Add(ItemSlot.Charm, null);
 
-
                 UpdateAttributeStats();
                 init = false;
-            }
-                        
+            }      
         }
 
         public Dictionary<Attribute, int> GetBaseAttributes(Lib.Background background)
@@ -145,16 +147,30 @@ namespace BuilPlanner
                     baseAttributeDict = new Dictionary<Attribute, int>()
                     {
                         { Attribute.Strength, 11 },
-                        { Attribute.Dexterity, 15 },
+                        { Attribute.Dexterity, 22 },
                         { Attribute.Intelligence, 12 },
-                        { Attribute.Willpower, 10 },
-                        { Attribute.Constitution, 11 },
-                        { Attribute.Endurance, 10 },
+                        { Attribute.Willpower, 14 },
+                        { Attribute.Constitution, 15 },
+                        { Attribute.Endurance, 13 },
                         { Attribute.Agility, 11 },
-                        { Attribute.Wisdom, 15 },
-                        { Attribute.Charisma, 18 },
+                        { Attribute.Wisdom, 16 },
+                        { Attribute.Charisma, 24 },
                     };
-            break;
+                    break;
+                case Lib.Background.Dancer:
+                    baseAttributeDict = new Dictionary<Attribute, int>()
+                    {
+                        { Attribute.Strength, 13 },
+                        { Attribute.Dexterity, 18 },
+                        { Attribute.Intelligence, 10 },
+                        { Attribute.Willpower, 14 },
+                        { Attribute.Constitution, 15 },
+                        { Attribute.Endurance, 19 },
+                        { Attribute.Agility, 24 },
+                        { Attribute.Wisdom, 12 },
+                        { Attribute.Charisma, 15 },
+                    };
+                    break;
     }
             return baseAttributeDict;
         }
@@ -252,24 +268,45 @@ namespace BuilPlanner
 
         private void UpdateAttributeStats()
         {
-            attributeStats[AttributeStat.Thoughness] = attributes[Attribute.Strength] * 0.06;
-            attributeStats[AttributeStat.Equipload] = attributes[Attribute.Strength] * 0.07;
-            attributeStats[AttributeStat.Dodge] = attributes[Attribute.Dexterity] * 0.05;
+            attributeStats[AttributeStat.StrWeaponPower] = attributes[Attribute.Strength] * 0.3;
+            attributeStats[AttributeStat.Thoughness] = attributes[Attribute.Strength] * 0.08;
+            attributeStats[AttributeStat.Lifting] = attributes[Attribute.Strength] * 0.07;
+
+            attributeStats[AttributeStat.DexWeaponPower] = attributes[Attribute.Dexterity] * 0.3;
+            attributeStats[AttributeStat.Tenacity] = attributes[Attribute.Dexterity] * 0.06;
             attributeStats[AttributeStat.Precision] = attributes[Attribute.Dexterity] * 0.05;
-            attributeStats[AttributeStat.Mending] = attributes[Attribute.Intelligence] * 0.06;
-            attributeStats[AttributeStat.Mana] = attributes[Attribute.Intelligence] * 0.07;
-            attributeStats[AttributeStat.Efficiency] = attributes[Attribute.Willpower] * 0.05;
-            attributeStats[AttributeStat.Concentration] = attributes[Attribute.Willpower] * 0.06;
+
+            attributeStats[AttributeStat.IntWeaponPower] = attributes[Attribute.Intelligence] * 0.3;
+            attributeStats[AttributeStat.Wits] = attributes[Attribute.Intelligence] * 0.08;
+            attributeStats[AttributeStat.Mind] = attributes[Attribute.Intelligence] * 0.07;
+
+            attributeStats[AttributeStat.Efficiency] = attributes[Attribute.Willpower] * 0.07;
+            attributeStats[AttributeStat.Concentration] = attributes[Attribute.Willpower] * 0.08;
+            attributeStats[AttributeStat.Psyche] = attributes[Attribute.Willpower] * 0.1;
+
+
             attributeStats[AttributeStat.Life] = attributes[Attribute.Constitution] * 0.06;
             attributeStats[AttributeStat.Block] = attributes[Attribute.Constitution] * 0.05;
+            attributeStats[AttributeStat.Convalescent] = attributes[Attribute.Constitution] * 0.09;
+
+
             attributeStats[AttributeStat.Stamina] = attributes[Attribute.Endurance] * 0.07;
-            attributeStats[AttributeStat.Poise] = attributes[Attribute.Endurance] * 0.06;
-            attributeStats[AttributeStat.Haste] = attributes[Attribute.Agility] * 0.04;
+            attributeStats[AttributeStat.Sturdiness] = attributes[Attribute.Endurance] * 0.06;
+            attributeStats[AttributeStat.Vigor] = attributes[Attribute.Endurance] * 0.2;
+
+            attributeStats[AttributeStat.Fitness] = attributes[Attribute.Agility] * 0.2;
+            attributeStats[AttributeStat.Perseverance] = attributes[Attribute.Agility] * 0.04;
             attributeStats[AttributeStat.Quickness] = attributes[Attribute.Agility] * 0.05;
-            attributeStats[AttributeStat.Penetration] = attributes[Attribute.Wisdom] * 0.05;
+
+            attributeStats[AttributeStat.Spirit] = attributes[Attribute.Wisdom] * 0.05;
             attributeStats[AttributeStat.Alacrity] = attributes[Attribute.Wisdom] * 0.04;
-            attributeStats[AttributeStat.Resilence] = attributes[Attribute.Charisma] * 0.06;
+            attributeStats[AttributeStat.Resistance] = attributes[Attribute.Wisdom] * 0.2;
+
+
+            attributeStats[AttributeStat.Resilience] = attributes[Attribute.Charisma] * 0.06;
             attributeStats[AttributeStat.Perspicacious] = attributes[Attribute.Charisma] * 0.05;
+            attributeStats[AttributeStat.Ferocity] = attributes[Attribute.Charisma] * 0.1;
+
         }
 
         public double GetAttributeStat(AttributeStat stat)
@@ -294,19 +331,6 @@ namespace BuilPlanner
             return attributes;
         }
         
-        public Dictionary<string, int> GetBaseAttributes(string background)
-        {
-            //40 attrib difference
-            switch(background)
-            {
-                case "Bard":
-                    return GetAttribDict(1,10,2,1,2,0,2,5,15);
-
-                case "Painter":
-                    return GetAttribDict(0, 8, 3, 8, 1, 0, 2, 16, 2);
-            }
-            return null;
-        }
 
         public void AddEquipment(string itemName, bool isMainHand = false)
         {

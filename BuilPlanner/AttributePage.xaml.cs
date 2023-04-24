@@ -27,7 +27,7 @@ namespace BuilPlanner
         private int attribPerLevel = 6;
         private bool shiftDown = false;
         private bool ctrlDown = false;
-        public AttributePage(Dictionary<Attributes.Attribute, int> att)           
+        public AttributePage(Dictionary<Attributes.Attribute, int> att)      
         {
             InitializeComponent();
             Can_attributes.Width = screenHeight;
@@ -55,23 +55,32 @@ namespace BuilPlanner
             TbCharismaValue.Text = attributes[Attributes.Attribute.Charisma].ToString();
             TbRemainAttrib.Text = attrib.GetRemainAttributes().ToString();
 
-            TbThoughness.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Thoughness).ToString();
-            TbEquipload.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Equipload).ToString();
+            TbWeaponSTR.Text = attrib.GetAttributeStat(Attributes.AttributeStat.StrWeaponPower).ToString();
+            TbWeaponDEX.Text = attrib.GetAttributeStat(Attributes.AttributeStat.DexWeaponPower).ToString();
+            TbWeaponINT.Text = attrib.GetAttributeStat(Attributes.AttributeStat.IntWeaponPower).ToString();
+            TbPsyche.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Psyche).ToString();
+            TbVigor.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Vigor).ToString();
+            TbPerseverance.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Perseverance).ToString();
+            TbFitness.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Fitness).ToString();
+            TbFerocity.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Ferocity).ToString();
+            TbResistance.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Resistance).ToString();
+            TbToughness.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Thoughness).ToString();
+            TbLifting.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Lifting).ToString();
             TbPrecision.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Precision).ToString();
-            TbDodge.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Dodge).ToString();
-            TbMana.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Mana).ToString();
-            TbMending.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Mending).ToString();
+            TbTenacity.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Tenacity).ToString();
+            TbMind.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Mind).ToString();
+            TbConvalescent.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Convalescent).ToString();
             TbConcentration.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Concentration).ToString();
             TbEfficiency.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Efficiency).ToString();
             TbLife.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Life).ToString();
             TbBlock.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Block).ToString();
             TbStamina.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Stamina).ToString();
-            TbPoise.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Poise).ToString();
-            TbHaste.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Haste).ToString();
+            TbSturdiness.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Sturdiness).ToString();
+            TbSpirit.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Spirit).ToString();
             TbQuickness.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Quickness).ToString();
-            TbPenetration.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Penetration).ToString();
+            TbWits.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Wits).ToString();
             TbAlacrity.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Alacrity).ToString();
-            TbResilence.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Resilence).ToString();
+            TbResilience.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Resilience).ToString();
             TbPerspicacious.Text = attrib.GetAttributeStat(Attributes.AttributeStat.Perspicacious).ToString();
         }
         private void ShiftDown(object sender, KeyEventArgs e)

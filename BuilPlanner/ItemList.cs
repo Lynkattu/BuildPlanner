@@ -10,12 +10,12 @@ namespace BuilPlanner
     {
         private List<Armor> armorList = new List<Armor>()
         {
-           new Armor("Dancer top", Armor.ArmorSlot.Chest, 450, 2),
+           new Armor("Dancer top", Armor.ArmorSlot.Chest, 450, 2, "Reduce acrobatic skills cost by 3%"),
            new Armor("Bishop Robe", Armor.ArmorSlot.Chest, 600, 4, Blessed.Blessing.None),
            new Armor("Paladin Boots",Armor.ArmorSlot.Feet, 700, 6, Blessed.Blessing.None),
            new Armor("Captain's hat", Armor.ArmorSlot.Head, 280, 1.5, Cursed.Curse.Pirate),
            new Armor("Vampire Vestment",Armor.ArmorSlot.Chest, 840, 6, Cursed.Curse.Bloodfiend),
-           new Armor("Druid Kilt", Armor.ArmorSlot.Legs, 600, 4, 3),
+           new Armor("Beast master Kilt", Armor.ArmorSlot.Legs, 600, 4, 3),
            new Armor("Runic Skirt", Armor.ArmorSlot.Legs, 405, 1.8, 6),
            new Armor("Druid Robe",Armor.ArmorSlot.Chest, 750, 5, 3),
            new Armor("Archangel Sorel's Cuirass", Armor.ArmorSlot.Chest, 1890, 14, Artifact.ArtifactPower.WrathOfSorel),
